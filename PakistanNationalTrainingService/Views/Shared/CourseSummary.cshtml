@@ -1,0 +1,73 @@
+﻿@model Course
+
+<div class="card pt-3">
+    <div class="card-body border border-dark">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">@Model.Name</h5>
+            <form id="@Model.Id" asp-action="AddToCart" asp-controller="Cart" method="post">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <span class="card-text p-1">
+                    <button type="submit" class="btn btn-dark-green btn-sm pull-right" style="float:right">Add To Cart</button>
+                 </span>
+            </form>
+        </div>
+
+        <p class="card-text">
+            @Model.Description
+        </p>
+
+        <div class="row">
+            <div class="col text-left">
+                <div class="font-weight-bold d-inline">
+                    Delivery Method:
+                </div>
+                @Model.DeliveryMethod
+            </div>
+
+            <div class="col text-right font-weight-bold mr-0 pr-0">
+                Location:
+            </div>
+
+            @{
+                if (!string.IsNullOrEmpty(Model.Location))
+                {
+                    <div class="col ml-1 pl-1">
+                        @Model.Location
+                    </div>
+                }
+                else
+                {
+                    <div class="col ml-1 pl-1">
+                        N/A
+                    </div>
+                }
+            }
+
+            <div class="col text-right">
+                <div class="font-weight-bold d-inline">
+                    Seats Available:
+                </div>
+                @Model.SeatsAvailable
+            </div>
+        </div>
+
+        @*<div class="d-flex justify-content-between">
+            <div class="d-inline-flex font-weight-bold">
+                Delivery Method:<div class="font-weight-normal ml-1">
+                    @Model.DeliveryMethod
+                </div>
+            </div>
+            <div class="d-inline-flex font-weight-bold">
+                Location: <div class="font-weight-normal ml-1">
+                    @Model.Location
+                </div>
+            </div>
+            <div class="d-inline-flex font-weight-bold">
+                Seats Available: <div class="font-weight-normal ml-1">
+                    @Model.SeatsAvailable
+                </div>
+            </div>
+        </div>*@
+    </div>
+</div>

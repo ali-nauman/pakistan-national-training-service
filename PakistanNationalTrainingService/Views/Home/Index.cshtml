@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron jumbotron-fluid bg-dark-green text-light">
+    <div class="container">
+        <h1 class="display-4">Pakistan National Training Service</h1>
+        <p class="lead">The national training management platform</p>
+    </div>
+</div>
+
+<h2>
+    Welcome to the Pakistan National Training Service online portal!
+</h2>
+
+<p>
+    You can perform a number of tasks on this portal, including:
+
+    <ul>
+        <li>browse our entire course catalogue</li>
+        <li>search and filter to find specific courses</li>
+        <li>register yourself (or a friend) for the said courses</li>
+        <li>request to start new courses</li>
+    </ul>
+
+    We hope that the Pakistani nation finds this portal very useful. It allows people across the country to take a variety of courses spanning various topics and delivered via a number of methods. The flexibility and convenience provided by this solution will definitely help the country progress towards becoming a major player in the international market.
+</p>
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <h2>Find a course</h2>
+        <p>Use this widget to find courses that suit your needs. You can search based on the course title, topic, delivery method and location</p>
+
+        <form asp-controller="Course" asp-action="Search">
+            <div class="form-group row">
+                <label class="col-form-label col-4 font-weight-bold" for="Name">Course Title</label>
+                <input class="form-control col-7" id="Name" name="Name" type="text" placeholder="e.g. Programming Fundamentals" />
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4 font-weight-bold" for="Topic">Topic</label>
+                <select class="form-control col-7" name="Topic" id="Topic">
+                    <option value="" selected>Select a topic...</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Management">Management Science</option>
+                    <option value="Social Science">Social Science</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4 font-weight-bold" for="DeliveryMethod">Delivery Method</label>
+                <select class="form-control col-7" name="DeliveryMethod" id="DeliveryMethod">
+                    <option value="" selected>Select a delivery method...</option>
+                    <option value="Online">Online</option>
+                    <option value="On-Site">On-Site</option>
+                    <option value="Off-Site">Off-Site</option>
+                    <option value="Instructor-Led">Instructor-Led</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4 font-weight-bold" for="Location">Location</label>
+                <select class="form-control col-7" name="Location" id="Location">
+                    <option value="" selected>Select a location...</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
+                </select>
+            </div>
+
+            <input class="btn btn-dark-green" type="submit" value="Search" />
+        </form>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+        <h2>Browse our catalogue</h2>
+        <p>If you do not know what kind of courses you may be interested in, or just want to explore all the courses we offer, you can browse the entire catalogue.</p>
+
+        <p>You can click the button below, or click the Courses link in the navigation bar on the top of the page</p>
+        <a class="btn btn-dark-green text-white text-decoration-none" href="@Url.Action("Index", "Course")">Browse Catalogue</a>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+﻿@model PakistanNationalTrainingService.Models.Order
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h1>Checkout</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <form asp-action="Checkout" method="post">
+            <div>
+                <h2>Personal Details</h2>
+
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAddress" class="control-label"></label>
+                    <input asp-for="EmailAddress" class="form-control" />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div>
+                <h2>Billing Address</h2>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div>
+                <h2>Booking Contact Details</h2>
+                <div class="form-group">
+                    <label asp-for="BookingContactFirstName" class="control-label"></label>
+                    <input asp-for="BookingContactFirstName" class="form-control" />
+                    <span asp-validation-for="BookingContactFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookingContactLastName" class="control-label"></label>
+                    <input asp-for="BookingContactLastName" class="form-control" />
+                    <span asp-validation-for="BookingContactLastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookingContactEmailAddress" class="control-label"></label>
+                    <input asp-for="BookingContactEmailAddress" class="form-control" />
+                    <span asp-validation-for="BookingContactEmailAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookingContactPhoneNumber" class="control-label"></label>
+                    <input asp-for="BookingContactPhoneNumber" class="form-control" />
+                    <span asp-validation-for="BookingContactPhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div>
+                <h2>Payment Details</h2>
+                <div class="form-group">
+                    <label asp-for="Payer" class="control-label"></label>
+                    <label for="Individual">Individual</label>
+                    <input class="form-control" id="Individual" name="Payer" type="radio" value="Individual" />
+                    <label for="Organization">Organization</label>
+                    <input class="form-control" id="Organization" name="Payer" type="radio" value="Organization" />
+                    @*<input asp-for="Payer" class="form-control" />*@
+                    <span asp-validation-for="Payer" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayerOrganizationName" class="control-label"></label>
+                    <input asp-for="PayerOrganizationName" class="form-control" />
+                    <span asp-validation-for="PayerOrganizationName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PromotionalCode" class="control-label"></label>
+                    <input asp-for="PromotionalCode" class="form-control" />
+                    <span asp-validation-for="PromotionalCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PaymentMethod" class="control-label"></label>
+                    <input asp-for="PaymentMethod" class="form-control" />
+                    <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-dark-green" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Order" asp-action="List" class="text-dark-green">Back to Order</a>
+</div>
+

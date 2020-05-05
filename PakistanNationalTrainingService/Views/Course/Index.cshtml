@@ -1,0 +1,13 @@
+﻿@model CoursesListViewModel
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h1>Courses</h1>
+<p>Here you can browse through the entire course catalogue offered by Pakistan National Training Service</p>
+
+@foreach (var course in Model.Courses) {
+
+    @Html.Partial("CourseSummary", course)
+}

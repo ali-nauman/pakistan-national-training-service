@@ -1,0 +1,14 @@
+﻿@model CoursesListViewModel
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h1>Search Results</h1>
+<p>Here is a list of courses that match your search criteria</p>
+
+@foreach (var course in Model.Courses)
+{
+
+    @Html.Partial("CourseSummary", course)
+}

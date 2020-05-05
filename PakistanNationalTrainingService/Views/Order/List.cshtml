@@ -1,0 +1,85 @@
+﻿@model IEnumerable<PakistanNationalTrainingService.Models.Order>
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>Orders</h1>
+
+<table class="table">
+    <thead class="">
+        <tr class="text-center">
+            <th class="border border-dark" colspan="4">Personal Details</th>
+            <th class="border border-dark" colspan="2">Buyer Contact Details</th>
+            <th class="border border-dark" colspan="4">Payment Details</th>
+        </tr>
+        <tr>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.BookingContactFirstName)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.BookingContactEmailAddress)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.Payer)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.PayerOrganizationName)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.PromotionalCode)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.PaymentMethod)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingContactFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingContactEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayerOrganizationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PromotionalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMethod)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
